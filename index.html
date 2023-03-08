@@ -5,16 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>台中市景點推薦</title>
     <style type="text/css">
+        /* 自訂一個class名叫container，要用大括號來設定它的CSS， margin: 0 auto 置中，多出來的寬度，左右會讓他平均，
+           要搭配width使用     .container是要套用在class=container的物件內的CSS  */
         .container { margin: 0 auto; width: 1024px; }
-        .large_font { font-size: 24px;}
+        /* font-size把字體變大 */
+        .large_font1 { font-size: 24px;}
+        /* 讓標題，滑鼠移到上方產生特效，讓他字再略大一點，被景顏色為黑色，文字顏色為白色 */
+        /* 在head，背景顏色屬性是background-color ； 在style設定的背景顏色屬性是background */
         .large_font:hover { font-size: 28px; background-color: black; color: white; }
+        /* 讓標題文字再更大一點 */
         .super_large_font { padding-top:50px; font-size: 40px; }
+        /* 把所有td一次設定，所以前面沒加點，padding 就是欄的周圍要多空隙 ，text-align: center 讓文字也置中(預設靠左對齊)*/
         td { padding: 10px; text-align: center;}
 
-        .r_corner { border-radius: 300px; width: 300px; height:300px;}
+        /* 讓圖片變圓角border-radius(r_corner1) */
+        /* 要讓它變正圓，要補width、height，寬高要一樣(r_corner) */
+        .r_corner { border-radius: 300px; width: 300px; height:300px;} 
         .r_corner1 {border-radius: 20px;}
 
-        .banner:hover { opacity: 0.8; }
+        /* :hover 滑鼠移到上方要做的動作，opacity不透明度 ， rotate旋轉，看多少deg */
+        .banner:hover { opacity: 0.9; }
         .r_img:hover { opacity: 0.8; rotate: 2deg;}
 
 
@@ -36,6 +46,7 @@
         font-size: 17px;
         }
 
+        /* 滑鼠移動到上方要套用的CSS */
         .navbar a:hover {
         background: #ddd;
         color: black;
@@ -46,40 +57,47 @@
 
 <body>
 
-
+<!-- navbar a 就是要在某個物件，class叫navbar的a這個子物件裡面  <a href> </a>   是超連結 -->
 <div class="navbar">
+    <!-- 這裡連結以#開頭，就是連結到網頁內部位置  
+         那一般是連結網址，就是 http://www.pu.edu.tw rarget="_blank" (就會另開分頁) -->
     <a href="#home">首頁</a>
     <a href="#s1">台中國家歌劇院</a>
     <a href="#s2">臺中州廳</a>
     <a href="#s3">審計新村</a>
-    </div>
+</div>
 
+
+<!-- 把表格放在div容器內，對容器調整，就等同於調整容器內所有內容，對容器做置中，就相當於裡面所有內容也會被置中 -->
+<!-- 所以這邊要補class="container" -->
 <div class="container">    
     <table>
         <tr>
+            <!-- colspan="2"做合併儲存格 -->
             <td img id="home" class="super_large_font" colspan="2">台中市景點推薦</td>
         </tr>
-        <tr>
-            <td colspan="2"><img class="r_corner1" img src="images/00taichung.jpeg" width="1024px" height="300px"></td>
+        <tr>    
+            <!-- 如果圖片跟程式同資料夾，就可以不用給路徑；反之不同資料夾，就需加上路徑 -->
+            <td colspan="2"><img class="r_corner1 banner" img src="images/00taichung.jpeg" width="1024px" height="300px"></td>
         </tr>
 
         
         <tr>
             <td colspan="2">
-            <p class="large_font">臺中市</p>
+            <p id="s1" class="large_font1">臺中市</p>
             <p>臺中市，通稱臺中，簡稱「中」，為中華民國直轄市，臺灣六都之一，
             也是中臺灣唯一的直轄市。周邊與臺灣省的六個縣相鄰，北鄰苗栗縣、新竹縣，
             南鄰彰化縣、南投縣，東隔中央山脈與花蓮縣相鄰，東北以中央山脈和雪山山脈毗鄰宜蘭縣，
-            西臨臺灣海峽。<p>
+            西臨臺灣海峽。</p>
             </td>
         </tr>
         
 
         <tr>
-            <td><img id="s1" img class="r_corner r_img" img src="images/01.jpeg"></td>
+            <td><img  img class="r_corner r_img" img src="images/01.jpeg"></td>
             <td>
             <p class="large_font">台中國家歌劇院</p>
-            <p>台中國家歌劇院位於台中市西屯區，是極具特色的大型公有展演空間，
+            <p id="s2">台中國家歌劇院位於台中市西屯區，是極具特色的大型公有展演空間，
             由日本建築師伊東豊雄設計，以人類最原始的「洞窟」、「地穴」的概念設計成世界獨一無二的美聲涵洞曲牆建築，
             歷時五年時間完成、耗資43.6億元，終在2014年11月23日落成啟用，內部規劃有大劇院、中劇院及小型實驗劇場，
             共可容納約三千餘人。</p><br><br>
@@ -101,7 +119,7 @@
                 
             所在位置：台中市西區民權路99號<br><br>
             </td>
-            <td><img id="s2" img class="r_corner r_img" img src="images/02.jpeg"></td>
+            <td><img img class="r_corner r_img" img src="images/02.jpeg"></td>
         </tr>
 
 
@@ -118,16 +136,18 @@
             </td>
         </tr>
 
-        <tr><td colspan="2"><br><br><br><br><br></td></tr>
+        <tr><td colspan="2"><br><br></td></tr>
 
 
         <tr>
-            <td style="background-color: black; color:whitesmoke;" colspan="2">
+            <!-- background-color 背景顏色 ，cokor前景顏色 -->
+            <td style="background: black; color:whitesmoke;" colspan="2">
                 <br>
                 靜宜大學 資料科學系 藍品旭製作 2023
                 <br>
                 <br>
             </td>
+        </tr>
 
     </table>
     
